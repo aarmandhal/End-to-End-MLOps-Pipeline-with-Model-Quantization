@@ -1,9 +1,10 @@
 python-dotenv
 huggingface_hub
 datasets
-bitsandbytes
 fastapi
 uvicorn
 pytest
 httpx
 llama-cpp-python
+ruff
+pydantic
