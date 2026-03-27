@@ -1,7 +1,6 @@
 from llama_cpp import Llama
 import re
 import os
-import json
 
 class Redactor:
     def __init__(self, model_path: str):
