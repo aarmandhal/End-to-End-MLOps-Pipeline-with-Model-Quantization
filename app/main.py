@@ -8,7 +8,7 @@ from app.redactor import Redactor
 async def lifespan(app: FastAPI):
     print("\n[INFO] Booting up Engine Room: Loading model...")
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    model_path = os.path.join(current_dir,"..", "models", "quantized_gguf", "pii-redactor-qwen-Q4_K_M.gguf") 
+    model_path = os.path.join(current_dir,"..", "models", "quantized_gguf", "pii-redactor-qwen-q4_k_m.gguf") 
     
     app.redactor = Redactor(model_path)
     

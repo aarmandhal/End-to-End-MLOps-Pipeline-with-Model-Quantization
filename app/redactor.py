@@ -85,7 +85,7 @@ Output only the fully redacted text.<|im_end|>
 
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    test_model_path = os.path.join(current_dir,"..", "models", "quantized_gguf", "pii-redactor-qwen-Q4_K_M.gguf")
+    test_model_path = os.path.join(current_dir,"..", "models", "quantized_gguf", "pii-redactor-qwen-q4_k_m.gguf")
     
     redactor_app = Redactor(model_path=test_model_path)
     
