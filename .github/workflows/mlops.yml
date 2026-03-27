@@ -48,6 +48,26 @@ jobs:
           )
           "
           
-        
       - name: Run Tests
         run: pytest tests/
+
+      - name: Push Model to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }} 
+        run: |
+          python -c "
+          import os
+          from huggingface_hub import HfApi
+          
+          # Initialize the API using your secret token
+          api = HfApi(token=os.environ['HF_TOKEN'])
+          
+          print('Uploading GGUF model to Hugging Face...')
+          api.upload_file(
+              path_or_fileobj='models/quantized_gguf/pii-redactor-qwen-q4_k_m.gguf',
+              path_in_repo='pii-redactor-qwen-q4_k_m_verified.gguf', # Renaming slightly to prove it uploaded!
+              repo_id='adhal/pii-redactor-qwen-Q4_K_M-GGUF',
+              repo_type='model'
+          )
+          print('Upload complete!')
+          "
