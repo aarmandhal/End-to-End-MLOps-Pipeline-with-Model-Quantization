@@ -13,7 +13,7 @@ The Prompt (Run 3 times in fresh sessions):
 
 Input: "Patient Michael Thompson (DOB: 05/12/1984) was seen at St. Jude Medical Center by Dr. Aris Thorne. Michael can be reached at m.thompson84@email.com or 555-928-1102. Please update his file."
 
-Expected Output: "Patient [NAME] (DOB: [DATE]) was seen at [LOCATION] by Dr. [DOCTOR]. [NAME] can be reached at [EMAIL] or [PHONE]. Please update his file."
+Expected Output: "Patient [NAME] (DOB: [DATE]) was seen at [LOCATION] by Dr. [NAME]. [NAME] can be reached at [EMAIL] or [PHONE]. Please update his file."
 
 Results:
 
