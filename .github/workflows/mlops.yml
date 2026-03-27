@@ -38,9 +38,15 @@ jobs:
       
       - name: Download Quantized Model
         run: |
-          pip install -U "huggingface_hub[cli]"
           mkdir -p models/quantized_gguf
-          python -m huggingface_hub.cli download adhal/pii-redactor-qwen-Q4_K_M-GGUF pii-redactor-qwen-Q4_K_M.gguf --local-dir models/quantized_gguf --local-dir-use-symlinks False
-          
+          python -c "
+          from huggingface_hub import hf_hub_download
+          hf_hub_download(
+              repo_id='adhal/pii-redactor-qwen-Q4_K_M-GGUF',
+              filename='pii-redactor-qwen-Q4_K_M.gguf',
+              local_dir='models/quantized_gguf'
+          )
+          "
+        
       - name: Run Tests
         run: pytest tests/
